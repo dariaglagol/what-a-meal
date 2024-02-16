@@ -7,8 +7,7 @@ const options = {
 };
 
 const getRecipesUrl = (mealName? : string) => {
-  const url = `https://tasty.p.rapidapi.com/recipes/list?q=${mealName || 'soup'}`;
-  //@todo: check API, may be I can ask just list without soup
+  const url = `https://tasty.p.rapidapi.com/recipes/list?q=${mealName}`;
   return fetch(url, options)
 }
 
