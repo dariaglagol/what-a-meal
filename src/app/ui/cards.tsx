@@ -8,7 +8,6 @@ export function Card({name, description, imageUrl, tags, id}: {
   id: string;
   tags: object[]; //@todo define types
 }) {
-  console.log({tags})
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <Image
