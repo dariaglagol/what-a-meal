@@ -1,7 +1,7 @@
 Hello! 
 This is a pet project and, in the future, cookbook application. 
 
-Now it's just a search bar with list of recipies. You may search by meal or grocery.
+Now it's just a search bar with list of recipes. You may search by meal or grocery.
 
 **What's "the future"?**
 

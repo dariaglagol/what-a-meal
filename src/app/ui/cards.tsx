@@ -22,7 +22,7 @@ export function Card({name, description, imageUrl, tags, id}: {
           <p className="text-gray-700 text-base line-clamp-2">
             {description}
           </p>
-          <Link href={`/recipie/${id}`} className={'bg-green-500 hover:bg-green-700 text-white py-2 px-4 mt-8 rounded-full self-start'}>See more</Link>
+          <Link href={`/recipe/${id}`} className={'bg-green-500 hover:bg-green-700 text-white py-2 px-4 mt-8 rounded-full self-start'}>See more</Link>
         </div>
     </div>
   );

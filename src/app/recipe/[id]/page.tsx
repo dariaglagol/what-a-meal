@@ -1,4 +1,5 @@
 import {getRecipe} from '@/app/lib/data'
+import Breadcrumbs from '@/app/ui/breadcrumbs'
 
 export default async function RecipePage({params}: {
   params: {
@@ -11,6 +12,15 @@ export default async function RecipePage({params}: {
 
   return (
     <div className={'container mx-auto px-4'}>
+      <Breadcrumbs breadcrumbs={[
+        { label: 'All recipes', href: '/' },
+        {
+          label: name,
+          href: `/recipe/${id}`,
+          active: true,
+        },
+      ]}
+      />
       <div className="w-full lg:max-w-full flex flex-col lg:flex-row">
         <img
           src={thumbnail_url}
