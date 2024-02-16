@@ -1,5 +1,6 @@
 'use client';
 
+import {ChangeEvent} from 'react'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import {debounce} from '@/app/lib/debounce'
 
@@ -8,11 +9,11 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = debounce((e) => {
-    const term = e.target.value
+  const handleSearch = debounce((e: ChangeEvent<HTMLInputElement>) => {
+    const meal = e.target.value
     const params = new URLSearchParams(searchParams);
-    if (term) {
-      params.set('q', term);
+    if (meal) {
+      params.set('q', meal);
     } else {
       params.delete('q');
     }
