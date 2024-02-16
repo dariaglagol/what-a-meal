@@ -2,7 +2,6 @@
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import {debounce} from '@/app/lib/debounce'
-// import { useDebouncedCallback } from 'use-debounce'; @todo: add this
 
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
@@ -12,7 +11,6 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const handleSearch = debounce((e) => {
     const term = e.target.value
     const params = new URLSearchParams(searchParams);
-    params.set('q', '1');
     if (term) {
       params.set('q', term);
     } else {
