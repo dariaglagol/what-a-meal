@@ -8,7 +8,7 @@ export default function Home({searchParams}: {
   const query = searchParams?.q || '';
 
   return (
-    <main className={'space-y-4'}>
+    <main className={'container mx-auto px-4'}>
       <RecipesList query={query}/>
     </main>
   );

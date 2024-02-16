@@ -17,13 +17,13 @@ export function Card({name, description, imageUrl, tags, id}: {
           width={100}
           height={100}
         />
-        <div className="px-6 py-4">
+        <div className="px-6 py-4 flex flex-col">
           <div className="font-bold text-xl mb-2">{name}</div>
           <p className="text-gray-700 text-base truncate ...">
             {description}
           </p>
+          <Link href={`/recipie/${id}`} className={'bg-green-500 hover:bg-green-700 text-white py-2 px-4 mt-8 rounded-full'}>See more</Link>
         </div>
-        <Link href={`/recipie/${id}`}>See more</Link>
     </div>
   );
 }

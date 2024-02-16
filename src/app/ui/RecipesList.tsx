@@ -7,7 +7,7 @@ export default async function RecipesList({query}: {query: string;}) {
   const {results} = await getRecipes(query);
 
   return (
-    <div className={'container mx-auto px-4'}>
+    <div>
       <Search placeholder={'Find me if you can'} />
 
       <div className={'grid grid-cols-4 gap-4'}>

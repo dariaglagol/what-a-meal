@@ -1,5 +1,4 @@
 import {getRecipe} from '@/app/lib/data'
-import Image from 'next/image'
 
 export default async function RecipePage({params}: {
   params: {
@@ -11,17 +10,22 @@ export default async function RecipePage({params}: {
   const {instructions, name, description, sections, tags, thumbnail_url, tips_summary} = results
 
   return (
-    <div>
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <p>{tips_summary?.content}</p>
-      <Image
-        src={thumbnail_url}
-        alt={`${name}'s profile picture`}
-        className="mr-4 rounded-full"
-        width={100}
-        height={100}
-      />
+    <div className={'container mx-auto px-4'}>
+      <div className="w-full lg:max-w-full flex flex-col lg:flex-row">
+        <img
+          src={thumbnail_url}
+          alt={`${name}'s profile picture`}
+          className="lg:h-auto lg:w-1/2 md:h-400 flex-none text-center overflow-hidden"
+        />
+        <div
+          className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+          <div className="mb-8">
+            <h1 className="text-gray-900 font-bold text-xl mb-2">{name}</h1>
+            <p className="text-gray-700 text-base">{description}</p>
+            <p className="text-gray-700 text-base">{tips_summary?.content}</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
