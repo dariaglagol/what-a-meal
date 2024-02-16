@@ -6,21 +6,21 @@ const options = {
   }
 };
 
-const getRecipiesUrl = (mealName? : string) => {
+const getRecipesUrl = (mealName? : string) => {
   const url = `https://tasty.p.rapidapi.com/recipes/list?q=${mealName || 'soup'}`;
   //@todo: check API, may be I can ask just list without soup
   return fetch(url, options)
 }
 
-const getRecipieUrl = async (id: string) => {
+const getRecipeUrl = async (id: string) => {
   const url = `https://tasty.p.rapidapi.com/recipes/get-more-info?id=${id}`;
 
   return await fetch(url, options)
 }
 
-export async function getRecipies(mealName?: string) {
+export async function getRecipes(mealName?: string) {
   try {
-    const res = await getRecipiesUrl(mealName)
+    const res = await getRecipesUrl(mealName)
     return res.json()
   } catch (error) {
     console.error('Database Error:', error);
@@ -28,9 +28,9 @@ export async function getRecipies(mealName?: string) {
   }
 }
 
-export async function getRecipie(id: string) {
+export async function getRecipe(id: string) {
   try {
-    const res = await getRecipieUrl(id)
+    const res = await getRecipeUrl(id)
     return res.json()
   } catch (error) {
     console.error('Database Error:', error);

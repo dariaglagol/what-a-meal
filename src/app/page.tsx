@@ -1,4 +1,4 @@
-import RecipieList from '@/app/ui/RecipieList'
+import RecipesList from '@/app/ui/RecipesList'
 
 export default function Home({searchParams}: {
   searchParams?: {
@@ -9,7 +9,7 @@ export default function Home({searchParams}: {
 
   return (
     <main className={'space-y-4'}>
-      <RecipieList query={query}/>
+      <RecipesList query={query}/>
     </main>
   );
 }

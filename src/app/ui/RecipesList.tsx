@@ -1,9 +1,9 @@
-import {getRecipies} from '@/app/lib/data'
+import {getRecipes} from '@/app/lib/data'
 import Search from '@/app/ui/search'
 import {Card} from '@/app/ui/cards'
 
-export default async function RecipieList({query}: {query: string;}) {
-  const {results} = await getRecipies(query);
+export default async function RecipesList({query}: {query: string;}) {
+  const {results} = await getRecipes(query);
 
   return (
     <div className={'container mx-auto px-4'}>

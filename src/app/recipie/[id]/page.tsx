@@ -1,13 +1,13 @@
-import {getRecipie} from '@/app/lib/data'
+import {getRecipe} from '@/app/lib/data'
 import Image from 'next/image'
 
-export default async function RecipiePage({params}: {
+export default async function RecipePage({params}: {
   params: {
     id: string;
   };
 }) {
   const {id} = params;
-  const results = await getRecipie(id);
+  const results = await getRecipe(id);
   const {instructions, name, description, sections, tags, thumbnail_url, tips_summary} = results
 
   return (
