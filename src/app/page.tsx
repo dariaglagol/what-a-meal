@@ -1,4 +1,4 @@
-import RecipesList from '@/app/ui/RecipesList'
+import RecipesList from '@/app/ui/recipesList'
 
 export default function Home({searchParams}: {
   searchParams?: {
