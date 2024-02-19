@@ -1,17 +1,21 @@
-import {getRecipe} from '@/app/lib/data'
-import Breadcrumbs from '@/app/ui/breadcrumbs'
+import React from 'react';
+import { getRecipe } from '@/app/lib/data';
+import Breadcrumbs from '@/app/ui/breadcrumbs';
 
-export default async function RecipePage({params}: {
+export default async function RecipePage({ params }: {
   params: {
     id: string;
   };
 }) {
-  const {id} = params;
+  const { id } = params;
   const results = await getRecipe(id);
-  const {instructions, name, description, sections, tags, thumbnail_url, tips_summary} = results
+  const {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    name, description, thumbnail_url, tips_summary,
+  } = results;
 
   return (
-    <div className={'container mx-auto px-4'}>
+    <div className="container mx-auto px-4">
       <Breadcrumbs breadcrumbs={[
         { label: 'All recipes', href: '/' },
         {
@@ -37,5 +41,5 @@ export default async function RecipePage({params}: {
         </div>
       </div>
     </div>
-  )
+  );
 }

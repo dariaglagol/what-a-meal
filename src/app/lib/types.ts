@@ -5,6 +5,6 @@ export type Recipe = {
   thumbnail_url: string;
   name: string;
   id: string;
-}
+};
 
-export type Recipes = Recipe[]
+export type Recipes = Recipe[];

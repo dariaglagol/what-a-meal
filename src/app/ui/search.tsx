@@ -1,8 +1,8 @@
 'use client';
 
-import {ChangeEvent} from 'react'
+import React, { ChangeEvent } from 'react';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import {debounce} from '@/app/lib/debounce'
+import debounce from '@/app/lib/debounce';
 
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
@@ -10,7 +10,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const { replace } = useRouter();
 
   const handleSearch = debounce((e: ChangeEvent<HTMLInputElement>) => {
-    const meal = e.target.value
+    const meal = e.target.value;
     const params = new URLSearchParams(searchParams);
     if (meal) {
       params.set('q', meal);
@@ -19,7 +19,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  }, 1000)
+  }, 1000);
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">
@@ -27,6 +27,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
         Search
       </label>
       <input
+        id="search"
         className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500 my-5"
         placeholder={placeholder}
         onChange={handleSearch}
